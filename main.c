@@ -42,6 +42,22 @@ int main(int argc, char **argv)
 
             if (flag != -1)
                 write_to_file(&counter, &turn, &to_twenty, arg_his);
+
+
+            char ***tmp = args;
+            while(*args)
+            {
+                for (int j = 0; (*args)[j]; j++)
+                {
+                    free((*args)[j]);
+                    (*args)[j] = NULL;
+                }
+                free(*args);
+                *args = NULL;
+                args++;
+            }
+            free(tmp);
+            args = NULL; 
         }
         close(script);
         
@@ -67,6 +83,22 @@ int main(int argc, char **argv)
 
         if (flag != -1)
             write_to_file(&counter, &turn, &to_twenty, arg_his);
+
+
+        char ***tmp = args;
+        while(*args)
+        {
+            for (int j = 0; (*args)[j]; j++)
+            {
+                free((*args)[j]);
+                (*args)[j] = NULL;
+            }
+            free(*args);
+            *args = NULL;
+            args++;
+        }
+        free(tmp);
+        args = NULL; 
     }
 
     for (int i = 0; arg_his[i]; i++)

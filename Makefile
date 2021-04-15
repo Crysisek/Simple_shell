@@ -1,7 +1,7 @@
 OBJ = main.o shell.o
 all: shellKK
 shellKK: $(OBJ)
-	gcc $(OBJ) -g -o shellKK
+	gcc $(OBJ) -o shellKK
 $(OBJ): shell.h
 .PHONY: clean
 clean:

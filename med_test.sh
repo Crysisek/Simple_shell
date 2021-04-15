@@ -1,4 +1,4 @@
-#!/home/krzysztof/Desktop/final_project/shellKK
+#!/home/crysisek/projects/so_project_simple_shell_upgraded/shellKK
 
 echo "Proste przekierowanie wyniku polecenia (ls) do pliku testowego..."
 ls >> test.txt

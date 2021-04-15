@@ -1,4 +1,4 @@
-#!/home/krzysztof/Desktop/final_project/shellKK
+#!/home/crysisek/projects/so_project_simple_shell_upgraded/shellKK
 
 echo "Testowanie tworzenia katalogu..."
 mkdir katalog_testowy
@@ -29,7 +29,6 @@ ls
 sleep 5s
 
 echo "Wypisanie zawartosci katalogu (ls -l)..."
-sleep 1s
 ls -l
 sleep 5s
 
@@ -39,7 +38,6 @@ ls -l | grep test.txt
 sleep 5s
 
 echo "Wypisanie zawartosci pliku test.txt..."
-echo to jest plik testowy >> test.txt
 cat test.txt
 sleep 5s
 

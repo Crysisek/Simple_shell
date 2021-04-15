@@ -99,7 +99,10 @@ char*** get_arguments(int input)
 short int execute(char ***args)
 {
     if (!strcmp((*args)[0], "\0"))
+    {
+        free(line);
         return -1;
+    }
     if (!strcmp((*args)[0], "cd"))
     {
         return change_dir(args);
@@ -135,7 +138,7 @@ short int execute(char ***args)
                     if (!strcmp((*args)[i], ">>"))
                     {
                         int redirect_to;
-                        if ((redirect_to = open((*args)[i + 1], O_WRONLY | O_CREAT | O_TRUNC, 0777)) < 0)
+                        if ((redirect_to = open((*args)[i + 1], O_WRONLY | O_CREAT | O_APPEND, 0777)) < 0)
                         {
                             write(STDERR_FILENO, "Error in shell.c, cannot open redirect file.\n", 45);
                             exit(EXIT_FAILURE);
